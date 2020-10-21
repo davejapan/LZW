@@ -43,12 +43,8 @@ int get_string_from_dict(Dictionary *dict, char **str, size_t *size, size_t pos)
 
   if(pos >= dict->current_pos)
   {
-    // printf("dggrf");
-    // fflush(stdout);
-
     return -2;
   }
-  // printf("INSIDE");
   *str = dict->ptr[pos].str;
   *size = dict->ptr[pos].size;
 
@@ -121,7 +117,6 @@ int add_into_dict(Dictionary *dict, char *str, size_t str_size)
   while(str_size-- > 0)
   {
     dict->ptr[dict->current_pos].str[str_size] = str[str_size];
-    // printf("%x ", (unsigned char)dict->ptr[dict->current_pos].str[str_size]);
   }
   dict->current_pos++;
 
